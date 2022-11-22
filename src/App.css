@@ -1,7 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+html{height: 100%;}
+body{
+  /* background-image: url(../public/finance-word-with-piggy-banks.jpg);  */
+  font-family: 'Muli', sans-serif!important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  background: rgb(182,255,134);
+background: linear-gradient(90deg, rgba(182,255,134,1) 0%, rgb(59 193 210) 100%);
+  /* background: rgb(255,246,124);
+background: linear-gradient(90deg, rgba(255,246,124,1) 0%, rgba(92,255,178,1) 100%); */
+}
+.btn.btn-custom{background-color: #5735dc;
+  border-color: #5735dc;
+  color:#fff;
+  margin-bottom: 1rem;
+}
+.btn.btn-custom:hover{background-color: #d8dfff;
+  border-color: #5735dc;
+  color:#5735dc;
+}
+.card{
+  box-shadow: 3px 4px 22px 7px rgb(114 139 106 / 48%);
+  -webkit-box-shadow: 3px 4px 22px 7px rgb(85 99 80 / 48%);
+  -moz-box-shadow: 3px 4px 22px 7px rgba(171,160,160,0.48);
+  border: var(--bs-card-border-width) solid rgb(34 39 100 / 44%);
+  max-width: 70%;
+    width: 35rem;
+    margin: auto;
+  text-align: center;
+}
+h2{font-weight: 600;}
+h5{padding:1.5rem}
+h3.card-title2{padding: 1rem; margin:0; font-weight: 600; font-size: 2.3rem;}
+.card-header:first-child {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.card-text:last-child {
+  padding-bottom: 1rem;
+    padding-top: 0.6rem;
+    padding-left: 0.5rem;
+    font-weight: 700;
+}
+.card label{
+  text-align: left;
+    display: block;
+  margin-left: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.card .card-title {
+  margin-bottom: 0;
+  padding-top: 1rem;
+  font-weight: 700;
+}
+.form-control {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+.card .card-body{padding:0}
+.balance{
+  background: rgb(184,197,255);
+background: linear-gradient(90deg, #b8c5ff 0%, #3b40fb 100%);
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #5735dc;
+  border-top: 1px solid #5735dc;
+}
+.transaction{padding: 1.5rem 3rem 1rem; }
+.card-header{font-weight: 600;}
 .App {
   text-align: center;
 }
+.img-fluid{
+  width: 18rem;
+  margin:auto;
+  display: block;
 
+}
+.table > thead {
+  background-color: #c6b8ffb3;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +117,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* custom */
+.navbar-nav .nav-link.active {
+  /* font-weight: bold; */
+  /* border-bottom: 3px solid blue; */
+  background-color: #a8f98e;
+  color: #000!important;
+}
+.navbar{
+  --bs-navbar-padding-x: 1rem!important;
+  --bs-navbar-padding-y: 0!important;
+}
+
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 1rem 2rem;
+}
 }

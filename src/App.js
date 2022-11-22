@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React, { useState, useMemo } from "react";
 import './App.css';
+import NavBar from "./components/navbar";
+import CreateAccount from "./components/createaccount";
+import Deposit from "./components/deposit";
+import Withdraw from "./components/withdraw";
+import AllData from "./components/alldata";
+import Home from "./components/home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { UserContext } from "./components/context";
+
 
 function App() {
+
+  const [ user, setUser ] = useState([{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]);
+  const providerValue = useMemo(() => ({user, setUser}),[user, setUser]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar/>
+        <div className="container" style={{padding: "40px"}}>
+        <UserContext.Provider value={providerValue}>
+        <Routes>
+        
+             <Route path="/" exact element={<Home/>} />
+             <Route path="/createaccount/" element={<CreateAccount/>} />
+             <Route path="/deposit/" element={<Deposit/>} />
+             <Route path="/withdraw/" element={<Withdraw/>} />
+             <Route path="/alldata/" element={<AllData/>} />
+         
+          </Routes>
+          </UserContext.Provider>      
+        </div>
+     
+    </BrowserRouter>
   );
 }
 
