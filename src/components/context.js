@@ -21,8 +21,8 @@ function Card(props){
           </div>
           <div className="transaction">
           {props.text && (<p className="card-text">{props.text}</p>)}
-          {props.body}
           {props.status && (<div id='createStatus'>{props.status}</div>)}
+          {props.body}
           </div>
         </div>
         
