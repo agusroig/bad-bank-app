@@ -4,7 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 
 function Deposit(){
   const [ balance, setBalance ] = useState();
-  const { user } = useContext(UserContext);
+  const { user, transaction, setTransaction } = useContext(UserContext);
   const [show, setShow]         = useState(true);
   const [deposit, setDeposit]   = useState('');
   const [status, setStatus]     = useState('');
@@ -19,6 +19,11 @@ function Deposit(){
     return true;
 }
 
+function addTransaction(amount, balance){
+  transaction.push({operation:'deposit',amount,balance});
+
+}
+
   function handleDeposit(){
     let amount= Number(deposit);
     if (!validate(amount)) return;
@@ -26,6 +31,7 @@ function Deposit(){
     let newBalance = user[0].balance;
     setBalance(newBalance);
     setDeposit('');
+    addTransaction(amount, newBalance);
     setShow(false);
   }
   function clearForm(){

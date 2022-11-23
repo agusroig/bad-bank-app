@@ -4,7 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 
 function Withdraw(){
     const [ balance, setBalance ] = useState();
-    const { user } = useContext(UserContext);
+    const { user, transaction } = useContext(UserContext);
     const [show, setShow]         = useState(true);
     const [withdraw, setWithdraw]   = useState('');
     const [status, setStatus]     = useState('');
@@ -25,6 +25,11 @@ function Withdraw(){
       return true;
   }
 }
+
+function addTransaction(amount, balance){
+  transaction.push({operation:'withdraw',amount,balance});
+
+}
   
     function handleWithdraw(){
       let amount= Number(withdraw);
@@ -32,6 +37,7 @@ function Withdraw(){
       user[0].balance -= amount;
       let newBalance = user[0].balance;
       setBalance(newBalance);
+      addTransaction(amount, newBalance);
       setWithdraw('');
       setShow(false);
     }

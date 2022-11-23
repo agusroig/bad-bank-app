@@ -3,6 +3,7 @@ import Card, { UserContext } from "./context";
 import Table from 'react-bootstrap/Table';
 
 
+
 function AllData(){
   const { user } = useContext(UserContext);
 
@@ -10,7 +11,7 @@ function AllData(){
     return(
 
           <tr key={i}>
-            <td>{user.id}</td>
+            <td>{i}</td>
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.password}</td>
@@ -19,6 +20,7 @@ function AllData(){
       
     );
     });
+
   
   return (
     <Card
@@ -26,6 +28,7 @@ function AllData(){
     txtcolor="#333"
     header="All Data"
     body= {
+      <>
       <Table striped bordered hover size="sm">
     <thead>
         <tr>
@@ -40,10 +43,9 @@ function AllData(){
         {usersList}
       </tbody>
       </Table>
-      
-   
+
+      </>
     }
-    // {JSON.stringify(user)}
   
     
     />

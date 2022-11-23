@@ -9,7 +9,7 @@ function NavBar(){
   // );
     return(
       <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" activekey="/createaccount">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light" activekey="/createaccount">
         <a className="navbar-brand" href="/">BadBank</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -51,7 +51,14 @@ function NavBar(){
             AllData
                 </NavLink>
             </li> 
-            </OverlayTrigger>         
+            </OverlayTrigger>     
+            <OverlayTrigger placement="bottom" overlay={<Tooltip>Here you will find all transaction's details</Tooltip>}>
+            <li className="nav-item">
+            <NavLink to="/transactions" className="nav-link" eventKey="link-4" exact activeClassName="active">
+            Transactions
+                </NavLink>
+            </li> 
+            </OverlayTrigger>       
           </ul>
         </div>
       </nav>
